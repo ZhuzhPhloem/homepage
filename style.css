@@ -1,0 +1,166 @@
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #34495E;
+    --accent-color: #2980B9;
+    --text-color: #333;
+    --background-light: #F8F9FA;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 3rem 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+.contact-bar {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-bar a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: opacity 0.3s;
+}
+
+.contact-bar a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin: 3rem 0 2rem;
+}
+
+.timeline {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 2rem;
+    margin-left: 1rem;
+}
+
+.timeline-item {
+    background: var(--background-light);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.4rem;
+    top: 1.5rem;
+    width: 15px;
+    height: 15px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.publication-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.publication {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.award-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.award-item {
+    background: white;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: white;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .timeline {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    .timeline-item::before {
+        display: none;
+    }
+}
+
+@media print {
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    .contact-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .award-grid {
+        grid-template-columns: 1fr;
+    }
+}
